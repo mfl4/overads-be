@@ -44,10 +44,6 @@ class AuthController extends Controller
      *     ),
      * )
      */
-    public function dapat(Request $req)
-    {
-        return response()->json(['user' => 'hello']);
-    }
 
     public function register(RegisterRequest $req)
     {

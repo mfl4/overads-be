@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('ads', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('name');
+            $table->enum('type', ['single', 'carousel', 'video'])->default('single');
+            $table->text('description')->nullable();
+            $table->string('theme')->nullable();
+            $table->json('platforms')->nullable();
+            $table->string('reference_media')->nullable();
             $table->timestamps();
         });
     }
